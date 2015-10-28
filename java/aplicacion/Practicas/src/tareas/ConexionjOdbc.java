@@ -8,7 +8,7 @@ public class ConexionjOdbc {
 	    private String url = "jdbc:postgresql://localhost:5432/"+basedatos;
 	    private String driver = "org.postgresql.Driver";
 	    private String user = "postgres";
-	    private String pass = "s0porte";
+	    private String pass = "tucontraseña";
 	    private Statement stmt = null;
 
 	    public ConexionjOdbc() {
