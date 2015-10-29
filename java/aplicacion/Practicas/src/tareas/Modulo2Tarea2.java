@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Modulo2Tarea2 {
     private Scanner teclado;
 	public Modulo2Tarea2(){
-		// constructor		
+		// constructor	
+		//agregue otro comentario
 	}
 	
 	public void imprmirNumero(){
