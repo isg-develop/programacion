@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestSQLite</string>
+
+    <string name="hello_world">Hola mundo</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="action_add">Agregar</string>
+    <string name="ms_BuscarQuote">Buscar factura</string>
+    <string name="ms_BuscarPersone">Buscar persona</string>
+    <string name="title_activity_listado_autor_form">ListadoAutorForm</string>
+    <string name="title_activity_agregar_item_form">AgregarItemForm</string>
+</resources>
