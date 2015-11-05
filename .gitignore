@@ -25,3 +25,14 @@ proguard/
 
 # Log Files
 *.log
+android/aplicacion/TestSQLite/.idea/compiler.xml
+android/aplicacion/TestSQLite/.idea/compiler.xml
+android/aplicacion/TestSQLite/.idea/gradle.xml
+android/aplicacion/TestSQLite/.idea/misc.xml
+android/aplicacion/TestSQLite/.idea/vcs.xml
+android/aplicacion/TestSQLite/.idea/compiler.xml
+android/aplicacion/TestSQLite/.idea/misc.xml
+android/aplicacion/TestSQLite/.idea/modules.xml
+android/aplicacion/TestSQLite/.idea/vcs.xml
+android/aplicacion/TestSQLite/.idea/encodings.xml
+prueba a ignorar.txt
