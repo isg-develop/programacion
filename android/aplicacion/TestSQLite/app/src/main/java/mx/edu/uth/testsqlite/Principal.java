@@ -1,5 +1,7 @@
 package mx.edu.uth.testsqlite;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -56,6 +58,30 @@ public class Principal extends ActionBarActivity {
         list.setAdapter(adapter);
         // Se agrego al listado
         t1.setText("Agregado...");
+
+            /* es necesario un intent que levante la actividad deseada */
+            Intent itSend = new Intent(android.content.Intent.ACTION_SEND);
+            itSend.setData(Uri.parse("mailto:"));
+                            /* vamos a enviar texto plano a menos que el checkbox estŽ marcado */
+            itSend.setType("plain/text");
+
+                            /* colocamos los datos para el env’o */
+            itSend.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{ "uth.tics.tareas@gmail.com"});
+            itSend.putExtra(android.content.Intent.EXTRA_SUBJECT, "Registro completado");
+            itSend.putExtra(android.content.Intent.EXTRA_TEXT, "Conexión a la base de datos satisfactoriamente");
+
+                            /* revisamos si el checkbox est‡ marcado enviamos el ’cono de la aplicaci—n como adjunto */
+            if (true) {
+                            	/* colocamos el adjunto en el stream */
+                itSend.putExtra(Intent.EXTRA_STREAM, Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.abc_ic_commit_search_api_mtrl_alpha));
+
+                            	/* indicamos el tipo de dato */
+                itSend.setType("image/png");
+            }
+
+                            /* iniciamos la actividad */
+            itSend.setType("message/rfc822");
+            startActivity(Intent.createChooser(itSend, "Enviar correo"));
 
         }catch (Exception e){
             t1.setText("Falla by..." + e.getMessage() + " -----  AND ------" + e.getLocalizedMessage() + "----" + e.toString());
