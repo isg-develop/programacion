@@ -1,0 +1,9 @@
+Para emplear estas clases se recomienda usar la actividad de Google Maps ubicada en la lista de templates de android studio.
+
+Para poder usar los mapas se debe de generar una key para poder acceder a los Google Play Services.
+
+La clase LocationProvider.java es la encargada de poder obtener la ubicacion del usuario mediante el GPS, para esto se debe de tener
+el permiso para usar la ubicacion.
+
+La clase Maps.java es la encargada de solicitar y plasmar la informacion en el mapa. Si solo se desea obtener la ubicacion,
+bastara con solicitar la longitud y latitud.
