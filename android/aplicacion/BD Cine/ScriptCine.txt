@@ -1,0 +1,27 @@
+CREATE TABLE Pelicula(
+                 _id_Peli INTEGER PRIMARY KEY AUTOINCREMENT,
+                 peli_nombre TEXT NOT NULL, 
+                 peli_sinopsis TEXT NOT NULL,  
+                 peli_link_video TEXT NOT NULL, 
+                 peli_categoria TEXT NOT NULL);
+
+CREATE TABLE Cine (
+                     _id_cine INTEGER PRIMARY KEY AUTOINCREMENT,
+                     cine_nombre TEXT NOT NULL, 
+                     cine_localizacion TEXT NOT NULL,
+                     _id_Peli INTEGER,
+                     FOREIGN KEY (_id_Peli) REFERENCES Pelicula (_id_Peli));
+
+CREATE TABLE Detalle_Peli ( _id_Detalle_Peli INTEGER PRIMARY KEY AUTOINCREMENT,
+                        Tipo TEXT NOT NULL, 
+                        Sala TEXT NOT NULL, 
+                        _id_Peli INTEGER,
+                        _id_cine INTEGER,                        
+                        FOREIGN KEY (_id_cine) REFERENCES Cine (_id_cine),
+                        FOREIGN KEY (_id_Peli) REFERENCES Pelicula (_id_Peli));
+
+CREATE TABLE Horario_Peli ( _id_Horario_Peli INTEGER PRIMARY KEY AUTOINCREMENT,
+                Horario TEXT NOT NULL,
+                dias TEXT NOT NULL,
+                _id_Peli INTEGER,
+                FOREIGN KEY (_id_Peli) REFERENCES Pelicula (_id_Peli));                
