@@ -4,7 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/GitHub/programacion/java/aplicacion/Practicas/lib/postgresql-9.4-1204.jdbc4.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.swt"/>
-	<classpathentry kind="lib" path="C:/Users/betita/Downloads/mysql-connector-java-5.1.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/betita/Documents/org.eclipse.swt/swt.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.37-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
