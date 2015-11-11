@@ -6,23 +6,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import modelo.sedesol.mx.Conexion;
+import modelo.Conexion;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.wb.swt.SWTResourceManager;
-
-
-
-
 
 
 public class Asistencia {
@@ -122,7 +116,7 @@ public class Asistencia {
 					}
 					
 					else{
-						MessageBox mensaje = new MessageBox (shlLista, SWT.ERROR);
+						MessageBox mensaje = new MessageBox (shlLista, SWT.ERROR_IO);
 						mensaje.setText("Error");
 						mensaje.setMessage("Entradas incorrectas");
 						mensaje.open();
