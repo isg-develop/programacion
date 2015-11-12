@@ -6,6 +6,7 @@ package uth.cine.domain.repository.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
@@ -24,15 +25,25 @@ public class EmployeeRepositoryJdbcImpl extends SimpleJdbcDaoSupport implements 
             EMPLOYEE_SELECT + " WHERE id = ?";
     private static final String SELECT_USER_BY_ID =
             EMPLOYEE_SELECT + " WHERE usuario = ? and pass = ?";
+     private static final String UPDATE_EMPLOYEE_BY_ID =
+            " UPDATE  ct_empleados SET nombre=?, rol=? WHERE id = ? ";
     
 
     @Override
     public List findAll() {
-
         // Realizacmos la consulta
         List matches = getJdbcTemplate().query(
                 EMPLOYEE_SELECT, new EmployeeRowMapper());
 
+        return matches;
+    }
+    
+    @Override
+    public List findAllbyCode(String code) {
+        // Realizacmos la consulta
+        String selectAllSql = EMPLOYEE_SELECT + " where usuario like ? "; 
+        code = "%"+code+"%" ; 
+        List matches = getJdbcTemplate().query(selectAllSql,  new Object[] { code }, new EmployeeRowMapper());
         return matches;
     }
 
@@ -42,13 +53,39 @@ public class EmployeeRepositoryJdbcImpl extends SimpleJdbcDaoSupport implements 
     }
     
     @Override
-    public Long insert(Employee employee) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Long insert(Employee data) {
+        long newId;
+        data.preValidate(); 
+        String INSERT_New =
+            " INSERT INTO ct_empleados(nombre, rol, usuario, pass)" +
+            " VALUES ( ?, ?, ?, ?) RETURNING id ";
+        newId = getSimpleJdbcTemplate().queryForLong(INSERT_New,
+                data.getName(),
+                data.getRole(),
+                data.getCode(),
+                data.getPass());
+
+        // Si es necesario guardar un listado 
+        /*
+        for (Iterator it = data.getLineItems().iterator(); it.hasNext();) {
+            LineItem lineItem = (LineItem) it.next();
+            getSimpleJdbcTemplate().update(
+                    LINE_ITEMS,
+                    lineItem.getProductId(),
+                    newPurchaseOrderId);
+        }
+        */
+        return newId;
     }
 
     @Override
     public Long update(Employee employee) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (long) this.getSimpleJdbcTemplate().update(
+                UPDATE_EMPLOYEE_BY_ID,
+                employee.getName(),
+                employee.getRole(),
+                employee.getEmployeeId());
+        
     }
 
     @Override
@@ -56,6 +93,7 @@ public class EmployeeRepositoryJdbcImpl extends SimpleJdbcDaoSupport implements 
          return (Employee) this.getSimpleJdbcTemplate().queryForObject(SELECT_USER_BY_ID, new EmployeeRowMapper(), user,pass);
     }
 
+    
     class EmployeeRowMapper implements ParameterizedRowMapper {
         @Override
         public Object mapRow(ResultSet rs, int rowNum) throws SQLException {

@@ -57,7 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     // METODOS
     @Override
     public List findByCode(String code) {
-         return getEmployeeRepository().findAll();
+         return getEmployeeRepository().findAllbyCode(code);
     }
     
     @Override
@@ -74,10 +74,17 @@ public class EmployeeServiceImpl implements EmployeeService{
             @Override
             public void doInTransactionWithoutResult(TransactionStatus status) {
                  // Actualizo los saldos por los nuevos pagos
-                if (employee.getEmployeeId()> 0){
+                long isNew;
+                if (employee.getEmployeeId()==null)
+                    isNew=0;
+                else
+                    isNew=employee.getEmployeeId();
+                
+                if (isNew > 0){
                 setRowAfected(getEmployeeRepository().update(employee));
                 }else{
                 setRowAfected(getEmployeeRepository().insert(employee));
+                employee.setEmployeeId(getRowAfected());
                 }
             }
         });
@@ -88,7 +95,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee findBySupplierId(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getEmployeeRepository().findById(id);
     }
 
     @Override

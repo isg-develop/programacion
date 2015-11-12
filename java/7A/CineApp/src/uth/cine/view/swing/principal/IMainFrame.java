@@ -80,9 +80,6 @@ public final class IMainFrame extends javax.swing.JFrame {
         }
     }
     
-     private void getPuntoVenta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private void getCajaView() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -300,6 +297,7 @@ public final class IMainFrame extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(5, 314));
 
+        jXTaskPane3.setForeground(new java.awt.Color(255, 0, 0));
         jXTaskPane3.setTitle("Clientes y CxC");
 
         clientejideItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uth/cine/view/images/cliente24.png"))); // NOI18N
@@ -320,6 +318,8 @@ public final class IMainFrame extends javax.swing.JFrame {
         });
         jXTaskPane3.getContentPane().add(empleadosjideItem);
 
+        jXTaskPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jXTaskPane1.setForeground(new java.awt.Color(255, 0, 0));
         jXTaskPane1.setTitle("Cine App");
 
         ventasjideItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uth/cine/view/images/puntoventa24.png"))); // NOI18N
@@ -331,6 +331,7 @@ public final class IMainFrame extends javax.swing.JFrame {
         });
         jXTaskPane1.getContentPane().add(ventasjideItem);
 
+        jXTaskPane2.setForeground(new java.awt.Color(255, 0, 0));
         jXTaskPane2.setTitle("Reportes");
 
         cajajideItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uth/cine/view/images/caja_ico.png"))); // NOI18N
@@ -621,22 +622,27 @@ private void jideButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
 
     private void itemEmploymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEmploymentsActionPerformed
         // TODO add your handling code here:
+        getEmployeeView();
     }//GEN-LAST:event_itemEmploymentsActionPerformed
 
     private void ventasjideItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasjideItemActionPerformed
         // TODO add your handling code here:
+        getPuntoVentaView();
     }//GEN-LAST:event_ventasjideItemActionPerformed
 
     private void clientejideItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientejideItemActionPerformed
         // TODO add your handling code here:
+        getClienteView();
     }//GEN-LAST:event_clientejideItemActionPerformed
 
     private void empleadosjideItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empleadosjideItemActionPerformed
         // TODO add your handling code here:
+        getEmployeeView();
     }//GEN-LAST:event_empleadosjideItemActionPerformed
 
     private void cajajideItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajajideItemActionPerformed
         // TODO add your handling code here:
+        getCajaView();
     }//GEN-LAST:event_cajajideItemActionPerformed
 
     /*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/

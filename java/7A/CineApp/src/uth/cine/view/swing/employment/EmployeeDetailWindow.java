@@ -82,9 +82,9 @@ public class EmployeeDetailWindow extends EscapeDialog {
 
         jTitleSeparator1.setTitle("Datos generales del cliente");
 
-        jLabel1.setText("*Codigo");
+        jLabel1.setText("*Codigo único");
 
-        jLabel17.setText("RFC");
+        jLabel17.setText("Rol");
 
         jLabel7.setText("*Nombre");
 
@@ -97,7 +97,7 @@ public class EmployeeDetailWindow extends EscapeDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTitleSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                    .addComponent(jTitleSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
@@ -234,7 +234,8 @@ public class EmployeeDetailWindow extends EscapeDialog {
 
         String brokenRules = employee.preValidate();
         if (brokenRules.equals("")) {
-            ServiceFactory.getEmployeeService().save(employee);
+             ServiceFactory.getEmployeeService().save(employee);            
+            setAcept();
         } else {
             // faltan datos por corregir
             JOptionPane.showMessageDialog(null,

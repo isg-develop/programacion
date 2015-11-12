@@ -14,6 +14,8 @@ import uth.cine.domain.entities.Employee;
 public interface EmployeeRepository {
 
     public List findAll();
+    
+    public List findAllbyCode(String code);
 
     public Employee findById(Long employeeId);
 
