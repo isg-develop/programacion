@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Temps du Film</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_promociones">Promociones</string>
+    <string name="title_activity_layo2">Layo2</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_layo3">Layo3</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_estrenos">Estrenos</string>
+    <string name="title_activity_ubicacion">Ubicacion</string>
+    <string name="title_activity_quejas">Quejas</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="title_activity_video">video</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_cartelera"  android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Cartelera "  />
+        <item android:id="@+id/nav_estrenos" android:icon="@android:drawable/ic_menu_upload_you_tube"
+            android:title="Proximos Estrenos"  />
+        <item android:id="@+id/nav_promo" android:icon="@android:drawable/ic_menu_week"
+            android:title="Promociones" />
+        <item android:id="@+id/nav_ubicacion" android:icon="@android:drawable/ic_menu_mylocation"
+            android:title="Ubicacion" />
+        <item android:id="@+id/nav_quejas" android:icon="@drawable/ic_menu_allfriends"
+            android:title="Quejas y Sugerencias" />
+        <item android:id="@+id/nav_config"  android:icon="@android:drawable/ic_menu_manage"
+            android:title="Configuracion"  />
+    </group>
+
+
+    <item android:title="Comunicate">
+        <menu>
+            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
+                android:title="Compartir" />
+        </menu>
+    </item>
+
+</menu>
