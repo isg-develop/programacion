@@ -6,6 +6,25 @@
     android:padding="10dp">
 
     <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista con adapter"
+        android:id="@+id/btnListView" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Listado de imagenes"
+        android:id="@+id/btnListImagees" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Reproducir audio"
+        android:id="@+id/btnMenuAudio"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
         android:id="@+id/btnAgregarMiembro"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

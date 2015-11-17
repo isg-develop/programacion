@@ -16,9 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".AgregarMiembro"></activity>
-        <activity android:name=".ModificarMiembro"></activity>
+        <activity android:name=".AgregarMiembro" />
+        <activity android:name=".ModificarMiembro" />
+        <activity
+            android:name=".Activities.ListImagenes"
+            android:label="@string/title_activity_list_imagenes" >
+        </activity>
+        <activity
+            android:name=".Activities.ListAdapterActivity"
+            android:label="@string/title_activity_list_adapter" >
+        </activity>
+        <activity
+            android:name=".Activity2"
+            android:label="@string/title_activity_activity2" >
+        </activity>
+        <activity
+            android:name=".Activities.DialogFrame"
+            android:label="@string/title_activity_dialog_frame" >
+        </activity>
     </application>
 
 </manifest>

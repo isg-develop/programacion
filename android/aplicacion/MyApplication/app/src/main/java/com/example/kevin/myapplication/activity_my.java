@@ -13,9 +13,12 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import com.example.kevin.myapplication.Activities.ListAdapterActivity;
+import com.example.kevin.myapplication.Activities.ListImagenes;
+
 public class activity_my extends ActionBarActivity {
 
-    Button btnAgregarMiembro;
+    Button btnAgregarMiembro, btnListView, btnMenuAudio;
     ListView lista;
     SQLControlador dbconeccion;
     TextView tv_miemID, tv_miemNombre;
@@ -36,6 +39,27 @@ public class activity_my extends ActionBarActivity {
             public void onClick(View v) {
                 Intent iagregar = new Intent(activity_my.this, AgregarMiembro.class);
                 startActivity(iagregar);
+            }
+        });
+
+        btnListView = (Button) findViewById(R.id.btnListView);
+        //acción del boton ver listado
+        btnListView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent opnList = new Intent(activity_my.this, ListAdapterActivity.class);
+                startActivity(opnList);
+            }
+        });
+
+        //acción del boton ver audio
+        btnMenuAudio = (Button) findViewById(R.id.btnMenuAudio);
+        btnMenuAudio.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent opnASct2 = new Intent(activity_my.this, Activity2.class);
+                opnASct2.putExtra("Nuevo",0);
+                startActivity(opnASct2);
             }
         });
 
